@@ -22,8 +22,19 @@ object SortAlgo {
       return arr
     }
 
-    fun insertionSort(arr : Array<Int>){
+    fun insertionSort(arr : Array<Int>) : Array<Int>{
+       for(i in 1..arr.lastIndex){
+           var crt = arr[i]
+           var j = i - 1
 
+           while (j >= 0 && arr[j] > crt){
+               arr[j + 1] = arr[j]
+               j--
+           }
+           arr[j + 1] = crt
+       }
+
+        return arr
     }
 
     fun countingSort(arr : Array<Int>){
